@@ -7,7 +7,7 @@ import { Modal } from "react-bootstrap";
 import  Button  from "react-bootstrap/Button";
 
 export default function Polnoletnost() {
-    const [show, setShow] = useState(false); //Tu se state spremeni na true da bo delovalo zaj za enkrat sn dav tk da lahk delamo brez da konstantno popUp nalaga
+    const [show, setShow] = useState(true); //Tu se state spremeni na true da bo delovalo zaj za enkrat sn dav tk da lahk delamo brez da konstantno popUp nalaga
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
