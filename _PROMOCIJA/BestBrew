@@ -1,0 +1,22 @@
+Spletna aplikacija za ocenjevanje in iskanje piv
+
+Aplikacija, ki omogoča zaposlenim Dravskih elektrarn Maribor dostop do podatkov preko mobilnih naprav od kjerkoli in kadarkoli.
+
+Leto izdelave: 2022
+
+Urban Vižitin
+David Golež
+Matic Absec
+Nik Kac
+
+Domača stran: /
+Vir podatkov: /
+...
+Koda: https://gitlab.com/poetovio/praktikum2/-/tree/main
+
+Kategorizacija: Spletna aplikacija
+
+Oznake: ReactJS, PostgreSQL, NodeJS, Express, GitLab, Firebase, Docker, MDBootstrap, Heroku.
+
+
+/*Opis manka še tu nter*/
