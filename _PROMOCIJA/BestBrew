@@ -1,6 +1,6 @@
-Spletna aplikacija za ocenjevanje in iskanje piv
+Spletna aplikacija Best Brew
 
-Aplikacija, ki omogoča zaposlenim Dravskih elektrarn Maribor dostop do podatkov preko mobilnih naprav od kjerkoli in kadarkoli.
+Spletna aplikacija, ki omogoča ocenjevanje in iskanje piv ter ustvarjanje lastnih seznamov prijubljenih.
 
 Leto izdelave: 2022
 
@@ -11,7 +11,7 @@ Nik Kac
 
 Domača stran: /
 Vir podatkov: /
-...
+
 Koda: https://gitlab.com/poetovio/praktikum2/-/tree/main
 
 Kategorizacija: Spletna aplikacija
