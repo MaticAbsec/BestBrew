@@ -13,9 +13,13 @@ build project:
     paths:
       - build/
 
-netlify:
-  stage: deploy
-  image: node:15
-  script: 
-    - npm install -g netlify-cli 
-    - netlify deploy --dir=build --prod
+docker-build:
+  stage: docker-build
+  image: docker:latest
+  services: 
+    - name: docker:19.03.8-dind
+  before_script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+  script:
+    - docker build --pull -t "$CI_REGISTRY_IMAGE" .
+    - docker push "$CI_REGISTRY_IMAGE"
