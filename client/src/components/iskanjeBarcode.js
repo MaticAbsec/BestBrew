@@ -2,6 +2,7 @@ import React from "react";
 import BarcodeScannerComponent from "react-qr-barcode-scanner";
 import { Card } from "react-bootstrap";
 import { motion } from 'framer-motion/dist/framer-motion';
+import "../App.css"
 
 
 function IskanjeBarcode() {
@@ -33,7 +34,7 @@ function IskanjeBarcode() {
               }}
             />
           </div>
-          <p>{data}</p>
+          <h2 style={{fontSize: 'h2'}}>{data}</h2>
         </Card>
       </center>
     </motion.div>
