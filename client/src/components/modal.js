@@ -1,4 +1,5 @@
 import '../styles/modal.css';
+import { Button} from "react-bootstrap";
 import React from 'react';
 import BarcodeScannerComponent from 'react-qr-barcode-scanner';
 import axios from 'axios';
@@ -35,9 +36,9 @@ function Modal({ handleClose, show, children }) {
                 />
                 </>
                 <p>{podatki}</p> 
-                <button type="button" onClick={handleClose}>
+                <Button type="button" onClick={handleClose}>
                     Zapri
-                </button>
+                </Button>
             </section>
         </div>
     );
