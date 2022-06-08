@@ -1,9 +1,9 @@
 import React from "react";
 import { Card, Col, Row } from "react-bootstrap";
 import slikaUrban from './Slike/urban.jpg';
-import slikaKac from './Slike/kac.jpg';
+import slikaKac from './Slike/Kac3.jpg';
 import slikaDavid from './Slike/david.jpeg';
-import slikaMatic from './Slike/matic.jpeg';
+import slikaMatic from './Slike/Matic2.jpg';
 import '../App.css'
 import '../styles/onas.css';
 
@@ -15,7 +15,7 @@ function About() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { duration: 0.5 } }}
             exit={{ opacity: 0, transition: { duration: 0.1 } }}
-        >
+        >   
             <div className="marginAll">
                 <Row>
                     <Col className="d-flex" style={{ margin: "0.1%" }}>
