@@ -16,7 +16,6 @@ import { motion } from 'framer-motion/dist/framer-motion';
 import BackgroundIMG from './StylingZaStran/backgroundIMG';
 import BackgroundIMG2 from './StylingZaStran/backgroundIMG2';
 import BackgroundIMG3 from './StylingZaStran/bacgroundIMG3';
-import SlideShow from './SlideShowBeer';
 import { MDBBtn } from 'mdbreact';
 
 import Popup from 'reactjs-popup';

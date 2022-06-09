@@ -53,8 +53,7 @@ function About() {
                                 <Card.Title>Nik Kac</Card.Title>
                                 <Card.Subtitle>Vuzenica</Card.Subtitle>
                                 <Card.Text>
-                                    Frontend expert<br />
-                                    Anime watcher ( HAHAHAHA )
+                                    Frontend expert
                                 </Card.Text>
                                 <Card.Link href="#">Instagram</Card.Link>
                                 <Card.Link href="#">Tinder</Card.Link>
