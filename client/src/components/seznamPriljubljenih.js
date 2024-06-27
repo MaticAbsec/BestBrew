@@ -10,7 +10,7 @@ const ratingChanged = (event,idPriljubljenaPiva) => {
   console.log(idPriljubljenaPiva);
     // PUT request using axios with error handling
     const article = { title: 'React PUT Request Example' };
-    axios.get(`http://localhost:5001/posodobiOceno/${event}/${idPriljubljenaPiva}`)
+    axios.get(`http://localhost:8081/posodobiOceno/${event}/${idPriljubljenaPiva}`)
         .catch(error => {
             console.error('There was an error!', error);
         });
@@ -18,7 +18,7 @@ const ratingChanged = (event,idPriljubljenaPiva) => {
 
 const kreirajSeznam = (podatki) => {
     return $.ajax({
-        url: "http://localhost:5001/dodajSeznam",
+        url: "http://localhost:8081/dodajSeznam",
           type: 'POST',
           data: JSON.parse(JSON.stringify(podatki)),
           crossDomain: true,
@@ -44,7 +44,7 @@ export default class SeznamPriljubljenihPiv extends React.Component {
     if(sessionStorage.getItem("prijavljenUporabnik")!=null){
     const idUporabnika=JSON.parse(sessionStorage.getItem("prijavljenUporabnik")).iduporabnik;
     
-    axios.get(`http://localhost:5001/vsaPriljubljenaPiva/${idUporabnika}`)
+    axios.get(`http://localhost:8081/vsaPriljubljenaPiva/${idUporabnika}`)
       .then(res => {
         const piva = res.data;
         const vsiIDs = piva.map(pivo => pivo.idseznam_piva);
@@ -55,7 +55,7 @@ export default class SeznamPriljubljenihPiv extends React.Component {
         });
       })
       
-      axios.get(`http://localhost:5001/seznamIme/${idUporabnika}`)
+      axios.get(`http://localhost:8081/seznamIme/${idUporabnika}`)
       .then(res => {
         const imenaJSON = res.data;
         const imenaSeznamov = imenaJSON.map(seznam => seznam.naziv);
@@ -70,7 +70,7 @@ export default class SeznamPriljubljenihPiv extends React.Component {
   handleOdstraniPivo(idpivo,idseznam) {
     console.log(idpivo);
     console.log(idseznam);
-    axios.delete(`http://localhost:5001/odstraniPivoSseznama/${idpivo}/${idseznam}`)
+    axios.delete(`http://localhost:8081/odstraniPivoSseznama/${idpivo}/${idseznam}`)
     this.setState({piva: this.state.piva.filter(function(pivo) { 
       return pivo.idpivo !== idpivo;
   })});

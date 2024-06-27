@@ -5,48 +5,34 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const port = process.env.PORT || 5001;  
+const port = 8080
 const bodyParser=require('body-parser');
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true }));
-const Pool = require("pg").Pool;
+const { Pool } = require('pg')
 const serverless = require("serverless-http");
 const fs = require('fs');
 
-let poizvedbaSQL = fs.readFileSync(__dirname + '/baza.sql').toString();
-
 //--------CONFIG ZA POVEZAVO PREKO URI-------
-const proConfig = {
-  connectionString: "postgres://eljaceluwvcisq:e878209cad80cb1c2bb3d63f89cf05a92b587bf00a302c1d5ba770816bc5d0a0@ec2-54-246-185-161.eu-west-1.compute.amazonaws.com:5432/da6r0qs3v9mvs5", //geslo,username,database,user
-  ssl: {
-    rejectUnauthorized: false
-  }
-}
-//-------------Spremenljivka-----------------
-const pool = new Pool(proConfig);
+const pool = new Pool({
+  user: 'postgres',
+  host: 'db',
+  password: 'root',
+})
 
-/*
-pool.connect(function(err, client, done) {
-    if(err) {
-      console.log(err);
-      process.exit(1);
-    }
-    client.query(poizvedbaSQL, function(err, result) {
-        done();
-        if(err) {
-          console.log(err);
-          process.exit(1);
-        }
-        process.exit(0);
-    });
+pool.query('SELECT NOW()', (err, res) => {
+  if (err) {
+    console.error('Error connecting to the database', err);
+  } else {
+    console.log('Database connection successful:', res.rows);
+  }
 });
-*/
 
 app.use(cors({
   origin: '*'
 }));
 
-//----test na portu localhost:5000/test-----
+//----test na portu localhost:8080/test-----
 app.get("/test", async (req, res) => {
     res.send({ express: 'Test Backenda' });
 });
@@ -230,7 +216,7 @@ app.get('/pivoScanner/:crtna_koda', async (req, res) => {
 
 });
 
-app.listen(5001, () => {
+app.listen(port, () => {
     console.log(`Listening on port ${port}`);
   });
 

@@ -5,19 +5,19 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const port = process.env.PORT || 5000;  
+const port = 8080
 const fs = require('fs');
 const path = require('path');
-const Pool = require("pg").Pool;
+const { Pool } = require('pg')
 
 //--------CONFIG ZA POVEZAVO PREKO URI-------
-const proConfig = {
-  connectionString: "postgres://eljaceluwvcisq:e878209cad80cb1c2bb3d63f89cf05a92b587bf00a302c1d5ba770816bc5d0a0@ec2-54-246-185-161.eu-west-1.compute.amazonaws.com:5432/da6r0qs3v9mvs5", //geslo,username,database,user
-  ssl: {
-    rejectUnauthorized: false
-  }
-}
-const pool = new Pool(proConfig);
+
+const pool = new Pool({
+  user: 'postgres',
+  host: '127.0.0.1',
+  password: 'root',
+  port: 4444
+})
 
 var sqlPoizvedba = fs.readFileSync(__dirname +'/baza.sql').toString();
 

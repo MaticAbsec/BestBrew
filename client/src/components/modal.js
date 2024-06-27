@@ -22,7 +22,7 @@ function Modal({ handleClose, show, children }) {
                         if(result) {
                             let podatek = result.text;
                             setStopStream(true);
-                            axios.get(`http://localhost:5001/pivoScanner/${result.text}`)
+                            axios.get(`http://localhost:8081/pivoScanner/${result.text}`)
                             .then(res => {
                                 let pivo = res.data;
                                 setPodatki(pivo[0].naziv);

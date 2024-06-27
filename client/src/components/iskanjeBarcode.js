@@ -1,7 +1,7 @@
 import React from "react";
 import BarcodeScannerComponent from "react-qr-barcode-scanner";
 import { Card } from "react-bootstrap";
-import { motion } from 'framer-motion/dist/framer-motion';
+import { motion } from 'framer-motion';
 import "../App.css"
 
 

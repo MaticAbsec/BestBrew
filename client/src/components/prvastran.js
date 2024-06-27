@@ -11,7 +11,7 @@ import pivo3 from './Slike/SlideShow2.jpg';
 
 import { Link } from 'react-router-dom';
 
-import { motion } from 'framer-motion/dist/framer-motion';
+import { motion } from 'framer-motion';
 
 import BackgroundIMG from './StylingZaStran/backgroundIMG';
 import BackgroundIMG2 from './StylingZaStran/backgroundIMG2';

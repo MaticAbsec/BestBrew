@@ -9,7 +9,7 @@ export default class SeznamPiv extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:5001/Vsapiva`)
+    axios.get(`http://localhost:8081/Vsapiva`)
       .then(res => {
         const piva = res.data;
         this.setState({ piva });

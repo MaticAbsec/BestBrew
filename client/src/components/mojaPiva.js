@@ -3,7 +3,7 @@ import { Card, Container } from "react-bootstrap";
 import SeznamPriljubljenihPiv from "./seznamPriljubljenih";
 import '../App.css'
 
-import { motion } from 'framer-motion/dist/framer-motion';
+import { motion } from 'framer-motion';
 
 function MojaPiva() {
     return (

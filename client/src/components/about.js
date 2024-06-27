@@ -7,7 +7,7 @@ import slikaMatic from './Slike/Matic2.jpg';
 import '../App.css'
 import '../styles/onas.css';
 
-import { motion } from 'framer-motion/dist/framer-motion';
+import { motion } from 'framer-motion';
 
 function About() {
     return (

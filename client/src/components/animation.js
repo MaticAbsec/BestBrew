@@ -9,7 +9,7 @@ import BeerMap from "./map";
 import IskanjeBarcode from "./iskanjeBarcode";
 import { Napaka } from "./error";
 
-import { AnimatePresence } from 'framer-motion/dist/framer-motion'
+import { AnimatePresence } from 'framer-motion'
 
 export default function AnimacijaStrani() {
     const location = useLocation();

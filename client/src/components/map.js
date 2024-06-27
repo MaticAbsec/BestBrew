@@ -7,7 +7,7 @@ import "../styles/map.css";
 
 import L from "leaflet";
 
-import { motion } from 'framer-motion/dist/framer-motion';
+import { motion } from 'framer-motion';
 
 function Icon(_iconSize) {
 
@@ -54,7 +54,7 @@ export default class BeerMap extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:5001/map`)
+    axios.get(`http://localhost:8081/map`)
       .then(res => {
         const pivovarne = res.data;
         const koordinate = [];

@@ -7,7 +7,7 @@ import '../App.css'
 import '../styles/iskanje.css';
 import 'mdbreact/dist/css/mdb.css'
 import axios from 'axios';
-import { motion } from 'framer-motion/dist/framer-motion';
+import { motion } from 'framer-motion';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 var Barcode = require('react-barcode');
@@ -30,7 +30,7 @@ export default function Iskanje() {
   const [piva, setPiva] = useState([])
 
   useEffect(() => {
-    axios.get(`http://localhost:5001/Vsapiva`)
+    axios.get(`http://localhost:8081/Vsapiva`)
       .then(res => {
         const piva = res.data;
         setPiva(piva);
@@ -69,7 +69,7 @@ function SearchChange({ piva }) {
     if(sessionStorage.getItem("prijavljenUporabnik")!=null){ 
       const idUporabnika=JSON.parse(sessionStorage.getItem("prijavljenUporabnik")).iduporabnik;
       
-      axios.get(`http://localhost:5001/seznamiUporabnikov/${idUporabnika}`)
+      axios.get(`http://localhost:8081/seznamiUporabnikov/${idUporabnika}`)
         .then(res => {
           const mojiSeznami = res.data;
           setMojiSeznami(mojiSeznami);
@@ -91,7 +91,7 @@ function SearchChange({ piva }) {
     console.log("idPivo: "+idPivo);
     console.log("izbraniSeznam: "+izbraniSeznam);
 
-    axios.get(`http://localhost:5001/dodajPivoNaSeznam/${idPivo}/${idSeznam}`)
+    axios.get(`http://localhost:8081/dodajPivoNaSeznam/${idPivo}/${idSeznam}`)
     .then(res => {
       console.log(res);
       notify();
