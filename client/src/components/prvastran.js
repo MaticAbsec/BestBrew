@@ -4,7 +4,7 @@ import '../styles/prvastran.css';
 import pivo from './Slike/BESTBREW.png';
 import Image from 'react-bootstrap/Image'
 import { Container, Card, Button, Row, Col } from 'react-bootstrap';
-import "./GoogleAuth/ageAuthPopUp.css";
+import "./FireBase/ageAuthPopUp.css";
 
 import pivo4 from './Slike/SlideShow3.jpg';
 import pivo3 from './Slike/SlideShow2.jpg';
