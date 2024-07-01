@@ -2,6 +2,7 @@
 
 # dependencies
 client/node_modules
+client/src/components/FireBase/firebase.js
 server/node_modules
 /.pnp
 .pnp.js
