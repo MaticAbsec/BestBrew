@@ -7,7 +7,8 @@ const app = express();
 const cors = require("cors");
 const port = 8080
 const bodyParser=require('body-parser');
-app.use(bodyParser.json()); 
+app.use(cors());
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 const { Pool } = require('pg')
 const serverless = require("serverless-http");
@@ -18,6 +19,7 @@ const pool = new Pool({
   user: 'postgres',
   host: 'db',
   password: 'root',
+  port: 5432
 })
 
 pool.query('SELECT NOW()', (err, res) => {
@@ -28,9 +30,6 @@ pool.query('SELECT NOW()', (err, res) => {
   }
 });
 
-app.use(cors({
-  origin: '*'
-}));
 
 //----test na portu localhost:8080/test-----
 app.get("/test", async (req, res) => {
@@ -107,6 +106,28 @@ app.get("/map", async (req, res) => {
     } catch (err) {
         console.error(err.message);
     }
+});
+
+// Endpoint to check if user exists and create if not
+app.post('/checkUser', async (req, res) => {
+  const { email, displayName, photoURL } = req.body;
+  const [ime, priimek] = displayName ? displayName.split(' ') : [null, null];
+  console.log(req.body);
+  try {
+    const userResult = await pool.query('SELECT * FROM uporabnik WHERE email = $1', [email]);
+    if (userResult.rows.length > 0) {
+      res.status(200).json(userResult.rows[0]);
+    } else {
+      const newUserResult = await pool.query(
+        'INSERT INTO uporabnik (ime, priimek, email, slika) VALUES ($1, $2, $3, $4) RETURNING *',
+        [ime, priimek, email, photoURL]
+      );
+      res.status(201).json(newUserResult.rows[0]);
+    }
+  } catch (error) {
+    console.error('Error checking/creating user:', error);
+    res.status(500).send('Server error');
+  }
 });
 
 //-----------------Shrani uporabnika v bazo

@@ -1,9 +1,6 @@
 import React from "react";
 import { Card, Col, Row } from "react-bootstrap";
-import slikaUrban from './Slike/urban.jpg';
-import slikaKac from './Slike/Kac3.jpg';
-import slikaDavid from './Slike/david.jpeg';
-import slikaMatic from './Slike/Matic2.jpg';
+import Avatar from './Slike/Avatar.png';
 import '../App.css'
 import '../styles/onas.css';
 
@@ -20,7 +17,7 @@ function About() {
                 <Row>
                     <Col className="d-flex" style={{ margin: "0.1%" }}>
                         <Card className="flex-fill" style={{ width: '18rem', height: "auto"  }}>
-                            <Card.Img variant="top" src={slikaUrban} />
+                            <Card.Img variant="top" src={Avatar} />
                             <Card.Body>
                                 <Card.Title>Urban Vižintin</Card.Title>
                                 <Card.Subtitle>Velenje</Card.Subtitle>
@@ -34,7 +31,7 @@ function About() {
                     </Col>
                     <Col className="d-flex" style={{ margin: "0.1%" }}>
                         <Card className="flex-fill" style={{ width: '18rem', height: "auto"  }}>
-                            <Card.Img variant="top" src={slikaDavid} />
+                            <Card.Img variant="top" src={Avatar} />
                             <Card.Body>
                                 <Card.Title>David Golež</Card.Title>
                                 <Card.Subtitle>Slovenj Gradec</Card.Subtitle>
@@ -48,7 +45,7 @@ function About() {
                     </Col>
                     <Col className="d-flex" style={{ margin: "0.1%" }}>
                         <Card className="flex-fill" style={{ width: '18rem', height: "auto"  }}>
-                            <Card.Img variant="top" src={slikaKac} />
+                            <Card.Img variant="top" src={Avatar} />
                             <Card.Body>
                                 <Card.Title>Nik Kac</Card.Title>
                                 <Card.Subtitle>Vuzenica</Card.Subtitle>
@@ -64,7 +61,7 @@ function About() {
                     <Col className="d-flex" style={{ margin: "0.1%" }}>
 
                         <Card className="flex-fill" style={{ width: '18rem', height: "auto" }}>
-                            <Card.Img variant="top" src={slikaMatic} />
+                            <Card.Img variant="top" src={Avatar} />
                             <Card.Body>
                                 <Card.Title>Matic Absec</Card.Title>
                                 <Card.Subtitle>Celje/Kranj</Card.Subtitle>

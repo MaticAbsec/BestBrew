@@ -1,21 +1,28 @@
+// src/components/NavB.js
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Navbar, Container, Nav, NavDropdown, Image } from 'react-bootstrap';
+import { Navbar, Container, Nav, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import "../styles/navbar.css";
 import "./FireBase/ageAuthPopUp.css";
 import pivo from './Slike/BESTBREW.png';
 import navlogo from './Slike/navlogo.png';
+import React, { useState, useEffect } from "react";
+import SignIn from './FireBase/SignIn';
+import UserProfile from './FireBase/UserProfile';
 
-import React from "react";
-import SignIn from './SignIn';
-import UserProfile from './UserProfile';
-function NavB({ user }) {
+const NavB = () => {
+  const [user, setUser] = useState(null);
 
-  const [prikaz, setPrikaz] = React.useState(false);
+  useEffect(() => {
+    const userFromStorage = sessionStorage.getItem("prijavljenUporabnik");
+    if (userFromStorage) {
+      setUser(JSON.parse(userFromStorage));
+    }
+  }, []);
 
-  const pull_data = (data) => {
-    console.log(data);
-    setPrikaz(true);
+  const handleSignOut = () => {
+    setUser(null);
+    sessionStorage.removeItem("prijavljenUporabnik");
   };
 
   return (
@@ -46,9 +53,11 @@ function NavB({ user }) {
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
+     
         <Nav>
-          {user ? <UserProfile user={user} /> : <SignIn />}
+          {user ? <UserProfile user={user} onSignOut={handleSignOut} /> : <SignIn />}
         </Nav>
+    
       </Container>
     </Navbar>
   );

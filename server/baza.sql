@@ -56,7 +56,7 @@ ALTER TABLE pivo ADD CONSTRAINT tk_pivo_pivovarna FOREIGN KEY (tk_pivovarna) REF
 
 
 INSERT INTO uporabnik (ime, priimek, email, slika)
-VALUES  ('Matic', 'Absec', 'absec.matic@gmail.com', 'slika1'),
+VALUES  ('Matic', 'Absec', 'matic.scott60@gmail.com', 'slika1'),
         ('David', 'Golež', 'golezdavid@gmail.com', 'slika2'),
         ('Nik', 'Kac', 'nikkac123@gmail.com', 'slika3'),
         ('Urban', 'Vižintin', 'urbi.vizintin@gmail.com', 'slika4'),
@@ -83,7 +83,7 @@ VALUES  (1, 'Lepa piva'),
         (3, 'Naj piva'),
         (4, 'Moji top piri'),
         (5, 'Piri da se ga odpipa'),
-        (6, 'Pir te vedno pomir'),
+        (6, 'Piri te k te vedno pomiri'),
         (7, 'Pivce za živce'),
         (8, 'Pivo kul'),
         (9, 'Beerpong'),
@@ -132,8 +132,6 @@ VALUES  (1, 'Union Nefiltrirano', 'alkoholno', 'nefiltrirano', 3, 3, 4, 87267, '
         (7, 'Dragon Slayer', 'alkoholno', 'ipa', 3, 4, 5, 22837, 'https://cdn1.interspar.at/cachableservlets/articleImage.dam/si/594694/dt_sub.jpg'),
         (7, 'Emergency Landing', 'alkoholno', 'neipa', 4, 3, 5, 21928, 'https://image-cache.beerizer.com/SM6cjr1WmHiaZlHAl2zhxhWrGpM=/trim/fit-in/400x400/beer-images.beerizer.com%2Fraw%2F48%2F19%2F192601.jpg'),
         (7, 'Rocket Queen', 'alkoholno', 'ipa', 4, 4, 3, 28447, 'https://cdn1.interspar.at/cachableservlets/articleImage.dam/si/555302/dt_zoom.jpg'),
-        (7, 'Wolf Pack', 'alkoholno', 'svetlo', 4, 4, 2, 27493, 'https://www.ggb-shop.com/wp-content/uploads/2020/10/wolf-1100x1100-1-768x768.png'),
-        (7, 'Best Buds', 'alkoholno', 'svetlo', 3, 3, 4, 29484, 'https://www.ggb-shop.com/wp-content/uploads/2020/09/buds-1100x1100-1-768x768.png'),
         (7, 'Drargon Slayer', 'alkoholno', 'ipa', 3, 4, 5, 22837, 'https://cdn1.interspar.at/cachableservlets/articleImage.dam/si/594694/dt_sub.jpg'),
         (7, 'Emergency Landing', 'alkoholno', 'neipa', 4, 3, 5, 21928, 'https://cdn1.interspar.at/cachableservlets/articleImage.dam/si/611679/dt_sub.jpg'),
         (7, 'Cashmere', 'alkoholno', 'neipa', 3, 4, 2, 21239, 'https://cdn1.interspar.at//cachableservlets/articleImage.dam/si/585838/dt_sub1.jpg'),
